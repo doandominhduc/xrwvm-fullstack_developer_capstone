@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/bootstrap.min.css">
+  
+  <style>
+    .custom-navbar {
+      background-color: #00ced1 !important; /* Màu xanh ngọc chủ đạo */
+    }
+    .custom-navbar .nav-link, .custom-navbar .navbar-brand {
+      color: #333 !important;
+      font-weight: 500;
+    }
+    .custom-navbar .nav-link.active {
+      color: #000 !important;
+      font-weight: bold;
+    }
+    .contact-card {
+      max-width: 850px;
+      margin: 50px auto;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+      padding: 30px;
+    }
+    .banner-img {
+      width: 100%;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+    .vertical-line {
+      border-right: 2px solid #666;
+      height: 100%;
+      min-height: 200px;
+    }
+    .contact-info-block {
+      text-align: center;
+    }
+    .contact-info-block p {
+      margin-bottom: 15px;
+      font-size: 15px;
+    }
+    .contact-info-block a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    .contact-title {
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 2px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg custom-navbar shadow-sm">
+    <div class="container-fluid mx-3">
+      <a class="navbar-brand fs-3 font-weight-bold" href="#">Dealerships</a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-5 gap-3">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/contact/">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="contact-card bg-white">
+      
+      <div class="row text-center">
+        <div class="col-12">
+          <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&q=80&w=800&h=250" class="banner-img" alt="Dealership Lot">
+        </div>
+      </div>
+
+      <div class="row align-items-center mt-3">
+        
+        <div class="col-md-5 text-center vertical-line d-flex align-items-center justify-content-center">
+          <img src="https://cdn-icons-png.flaticon.com/512/5690/5690089.png" alt="Contact Icon" style="width: 140px; height: 140px; opacity: 0.9;">
+        </div>
+        
+        <div class="col-md-7 contact-info-block">
+          
+          <p>
+            <span class="contact-title">Contact Customer Service</span><br>
+            <a href="mailto:support@bestcars.com">support@bestcars.com</a>
+          </p>
+          
+          <p>
+            <span class="contact-title">Contact our National Advertising team</span><br>
+            <a href="mailto:NationalSales@bestcars.com">NationalSales@bestcars.com</a>
+          </p>
+          
+          <p>
+            <span class="contact-title">Contact our Public Relations team</span><br>
+            <a href="mailto:PR@bestcars.com">PR@bestcars.com</a>
+          </p>
+          
+          <p>
+            <span class="contact-title">Contact the bestcars.com offices</span><br>
+            <span class="text-secondary fw-bold">312-611-1111</span>
+          </p>
+          
+          <p>
+            <span class="contact-title">Become a bestcars.com car dealer</span><br>
+            <a href="https://growwithbestcars.com" target="_blank">Visit growwithbestcars.com</a>
+          </p>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

@@ -22,8 +22,8 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('djangoapp/', include('djangoapp.urls')),
-    # Định tuyến cho trang chủ hiện tại
     path('', TemplateView.as_view(template_name="Home.html")),
-    # THÊM DÒNG NÀY THEO YÊU CẦU TASK 3
     path('about/', TemplateView.as_view(template_name="About.html")),
+    # THÊM DÒNG NÀY THEO YÊU CẦU ĐỀ BÀI
+    path('contact/', TemplateView.as_view(template_name="Contact.html")),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
