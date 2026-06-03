@@ -3,7 +3,7 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.models import User
-from django.shortcuts import get_object_or_404, render, redirect
+from django.shortcuts import get_object_or_404, redirect
 from django.contrib.auth import logout
 from django.contrib import messages
 from datetime import datetime
@@ -22,25 +22,32 @@ logger = logging.getLogger(__name__)
 
 # Create your views here.
 
-# Create a `login_request` view to handle sign in request
+# 1. Hàm xử lý Đăng nhập (Login View)
 @csrf_exempt
 def login_user(request):
-    # Get username and password from request.POST dictionary
+    # Lấy username và password từ dữ liệu JSON gửi lên từ React
     data = json.loads(request.body)
     username = data['userName']
     password = data['password']
-    # Try to check if provide credential can be authenticated
+    
+    # Xác thực thông tin tài khoản dựa trên Django Auth
     user = authenticate(username=username, password=password)
     data = {"userName": username}
+    
     if user is not None:
-        # If user is valid, call login method to login current user
+        # Nếu tài khoản hợp lệ, tiến hành thiết lập Session đăng nhập
         login(request, user)
         data = {"userName": username, "status": "Authenticated"}
     return JsonResponse(data)
 
-# Create a `logout_request` view to handle sign out request
-# def logout_request(request):
-# ...
+
+# 2. THAY THẾ / MỞ KHÓA HÀM LOGOUT THEO YÊU CẦU ĐỀ BÀI TẠI ĐÂY
+@csrf_exempt
+def logout_request(request):
+    logout(request)          # Chấm dứt session làm việc của user trên server
+    data = {"userName": ""}  # Trả về chuỗi username rỗng theo đúng định dạng đề bài
+    return JsonResponse(data)
+
 
 # Create a `registration` view to handle sign up request
 # @csrf_exempt

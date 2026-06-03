@@ -10,7 +10,11 @@ urlpatterns = [
 
     # path for login
     path(route='login', view=views.login_user, name='login'),
-
+    path(route='login/', view=views.login_user, name='login_slash'),
+    
+    # Path cho logout (Bổ sung thêm bản có dấu / để sửa triệt để lỗi 404)
+    path(route='logout', view=views.logout_request, name='logout'),
+    path(route='logout/', view=views.logout_request, name='logout_slash'),
     # path for dealer reviews view
 
     # path for add a review view
