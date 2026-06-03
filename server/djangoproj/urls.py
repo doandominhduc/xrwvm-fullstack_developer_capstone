@@ -24,6 +24,8 @@ urlpatterns = [
     path('djangoapp/', include('djangoapp.urls')),
     path('', TemplateView.as_view(template_name="Home.html")),
     path('about/', TemplateView.as_view(template_name="About.html")),
-    # THÊM DÒNG NÀY THEO YÊU CẦU ĐỀ BÀI
     path('contact/', TemplateView.as_view(template_name="Contact.html")),
+    
+    # THÊM DÒNG NÀY THEO YÊU CẦU BÀI HỌC
+    path('login/', TemplateView.as_view(template_name="index.html")),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
